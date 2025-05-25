@@ -1,2 +1,0 @@
-# HarshitaMav
-Portfolio
