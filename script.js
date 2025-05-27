@@ -275,7 +275,7 @@ function downloadResume() {
 
 // Medium blogs loading functionality
 async function loadMediumBlogs() {
-    const blogsGrid = $('#blogsGrid');
+    const blogsGrid = document.getElementById('blogsGrid');
     const mediumUsername = 'harsita-mav'; // Replace with actual Medium username
     
     try {
@@ -284,16 +284,17 @@ async function loadMediumBlogs() {
         const data = await response.json();
         
         if (data.status === 'ok') {
-            blogData = data.items.slice(0, 6); // Get latest 6 articles
+            const blogData = data.items.slice(0, 6); // Get latest 6 articles
             displayBlogs(blogData);
         } else {
-            displayBlogError();
+            displayStaticBlogsNoImage(); // Fallback without images
         }
     } catch (error) {
         console.error('Error loading Medium blogs:', error);
-        displayBlogError();
+        displayStaticBlogsNoImage(); // Fallback without images
     }
 }
+
 
 function displayBlogs(blogs) {
     const blogsGrid = $('#blogsGrid');
@@ -331,6 +332,31 @@ function displayBlogs(blogs) {
     
     // Initialize blog filters
     initializeBlogFilters();
+}
+
+function initializeBlogFilters() {
+    const filterBtns = $$('.filter-btn');
+    const blogCards = $$('.blog-card');
+    
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update active filter
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            const filter = btn.dataset.filter;
+            
+            // Filter blog cards
+            blogCards.forEach(card => {
+                if (filter === 'all' || card.dataset.category.includes(filter)) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeInUp 0.6s ease-out';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
 }
 
 function displayBlogError() {

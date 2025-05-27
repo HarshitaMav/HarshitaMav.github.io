@@ -708,6 +708,7 @@ body {
 }
 
 .blog-image {
+    display: none !important;
     height: 200px;
     overflow: hidden;
 }
@@ -725,6 +726,7 @@ body {
 
 .blog-content {
     padding: 1.5rem;
+    flex: 1;
 }
 
 .blog-category {
