@@ -3,41 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harsita Mav - Portfolio</title>
+    <title>Harsita Mav - AI/ML Engineer & Full-Stack Developer</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+  
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">Harsita Mav</div>
+            <div class="nav-logo">Harsita</div>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#about-me">About-me</a></li>
-                <li><a href="#contacts">Contacts</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#blogs">Blogs</a></li>
+                <li><a href="#about-me">About</a></li>
+                <li><a href="#contacts">Contact</a></li>
             </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Harsita is a <span class="highlight">machine learning engineer</span> and <span class="highlight">full-stack developer</span></h1>
-            <p>She crafts intelligent solutions where AI meets scalable web technologies</p>
-            <a href="mailto:hmav01@syr.edu" target="_blank"><button class="cta-button">Contact me!</button></a>
+            <h1 class="typewriter">Harsita is a <span class="highlight">machine learning engineer</span> and <span class="highlight">full-stack developer</span></h1>
+            <p class="fade-in-up">Product-driven software engineer with hands-on experience in delivering scalable AI and fullstack solutions across fraud detection, OCR, and automated support systems. Specialized in deploying machine learning models and integrating LLMs into production environments.</p>
+            <div class="hero-buttons fade-in-up">
+                <a href="mailto:hmav01@syr.edu" target="_blank"><button class="cta-button">Contact me!</button></a>
+                <button class="resume-download" onclick="downloadResume()">
+                    <i class="fas fa-download"></i> Download Resume
+                </button>
+            </div>
         </div>
         <div class="hero-image">
-            <img src="images/Group 46.png" alt="Harsita Mav" class="hero-photo" style="width:300px; height:400px; object-fit:cover; border-radius:10px; border:2px solid transparent;">
-            <div class="status-box">Currently working on <span class="highlight">AI Solutions</span></div>
+            <div class="floating-card">
+                <img src="images/ai solutions.png" alt="Harsita Mav" class="profile-image">
+                <div class="tech-icons">
+                    <i class="fab fa-python"></i>
+                    <i class="fab fa-js-square"></i>
+                    <i class="fab fa-react"></i>
+                    <i class="fas fa-brain"></i>
+                </div>
+            </div>
+            <div class="status-box pulse">
+                <span class="status-indicator"></span>
+                Currently working on <span class="highlight">AI Solutions</span>
+            </div>
         </div>
     </section>
 
     <!-- Quote Section -->
     <section class="quote-section">
-        <blockquote>
-            "Product-driven software engineer with hands-on experience in delivering scalable AI and fullstack solutions"
+        <blockquote class="slide-in">
+            "Transforming creativity and knowledge into production-ready AI solutions has been my passion for over 2 years. Leading cross-functional teams to deploy machine learning models that drive business outcomes."
             <cite>- Harsita Mav</cite>
         </blockquote>
     </section>
@@ -46,48 +73,291 @@
     <section id="projects" class="projects">
         <div class="section-header">
             <h2><span class="hash">#</span>projects</h2>
-            <a href="https://github.com/harshitamav" target="_blank" class="view-all">View all ~~></a>
+            <div class="slider-controls">
+                <button class="slider-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+            </div>
         </div>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="images/chatbot.jpg" alt="LLM-Powered AI Chatbot" style="width: 70%; height:200px; object-fit:cover; border-radius:8px;">
-                    <div class="tech-stack">Python OpenAI LangChain FastAPI</div>
+        <div class="projects-container">
+            <div class="projects-slider" id="projectsSlider">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/chatbot.jpg" alt="LLM-Powered AI Chatbot">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/HarshitaMav/LLM-Powered-AI-Chatbot" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/HarshitaMav/LLM-Powered-AI-Chatbot" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="tech-stack">Python OpenAI LangChain FastAPI Pinecone</div>
+                        <h3>LLM-Powered AI Chatbot</h3>
+                        <p>Engineered a retrieval-augmented chatbot with 95% accuracy, reducing response time by 60%. Integrated vector search (FAISS/Pinecone) for efficient information retrieval.</p>
+                        <div class="project-metrics">
+                            <span class="metric">95% Accuracy</span>
+                            <span class="metric">60% Faster Response</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-info">
-                    <h3>LLM-Powered AI Chatbot</h3>
-                    <p>Automated customer support system</p>
-                    <div class="project-buttons">
-                        <a href="https://github.com/HarshitaMav/LLM-Powered-AI-Chatbot" target="_blank"><button class="btn-primary">Code</button></a>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/ecommerce.png" alt="Looto E-commerce">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/HarshitaMav/ecommerce-store-react" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/HarshitaMav/ecommerce-store-react" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="tech-stack">React.js Firebase Node.js MongoDB</div>
+                        <h3>Looto E-commerce Platform</h3>
+                        <p>Full-stack e-commerce platform with 20+ product categories, secure authentication, and real-time inventory management. Implemented payment gateway with 100% encrypted transactions.</p>
+                        <div class="project-metrics">
+                            <span class="metric">20+ Categories</span>
+                            <span class="metric">100% Secure</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/face-recognition.png" alt="Face Recognition AI">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://ieeexplore.ieee.org/abstract/document/9825044" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://ieeexplore.ieee.org/abstract/document/9825044" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="tech-stack">Python Keras TensorFlow OpenCV MTCNN</div>
+                        <h3>Face Recognition & Adversarial Masking</h3>
+                        <p>Enhanced face recognition models with adversarial masking techniques. Published in 2022 3rd International Conference for Emerging Technology (INCET) IEEE Journal.</p>
+                        <div class="project-metrics">
+                            <span class="metric">IEEE Published</span>
+                            <span class="metric">99% Accuracy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/genetic-alogorithm.jpg" alt="Genetic-Algorithm">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/HarshitaMav/Genetic-Algorithm" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/HarshitaMav/Genetic-Algorithm" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="tech-stack">Python Scikit-Learn Genetic-Algorithm ML-Libraries</div>
+                        <h3>Genetic Algorithm</h3>
+                        <p>Implemented a research-grade project leveraging genetic algorithms to optimize model architecture and hyperparameters. Achieved an 85% accuracy rate on benchmark datasets while reducing model development time by 80%, demonstrating the algorithm's potential for accelerating AI research and deployment in enterprise applications.</p>
+                        <div class="project-metrics">
+                            <span class="metric">85% Accurate Results</span>
+                            <span class="metric">Enterprise Grade</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/detect-count.jpg" alt="Human Tracking and Counting System">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/HarshitaMav/Human-Detection-from-CCTV-Footage" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/HarshitaMav/Human-Detection-from-CCTV-Footage" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="tech-stack">Python OpenCV TensorFlow Yolo-v8 DeepSort</div>
+                        <h3>Human Tracking and Counting System</h3>
+                        <p>Track and count unique humans in multiple simultaneous CCTV feeds using YOLOv8 for detection and DeepSORT for tracking. This system efficiently identifies individuals even across different camera angles, minimizing duplicates and false counts.</p>
+                        <div class="project-metrics">
+                            <span class="metric">Mutlicamera Video Processing</span>
+                            <span class="metric">Real-time Processing and Counting</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/safe-unlock.jpg" alt="OCR System">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/HarshitaMav/Unlocking-Locker-using-Hand-Signs" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/HarshitaMav/Unlocking-Locker-using-Hand-Signs" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="tech-stack">C/C++ Arduino Simulator Hardware-systems TinkerCad</div>
+                        <h3>Unlock Locker using Hand Signs</h3>
+                        <p>This project enables secure safe unlocking using a predefined sequence of hand gestures with built-in user authentication. It operates via a two-part system: a gesture-transmitting unit and an authentication-based receiver.</p>
+                        <div class="project-metrics">
+                            <span class="metric">Simulation-TinkerCad</span>
+                            <span class="metric">RFID-Sensor</span>
+                            <span class="metric">Microcontrollor</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="images/ecommerce.png" alt="Looto E-commerce" style="width:65%; height:200px; object-fit:cover; border-radius:8px;">
-                    <div class="tech-stack">React.js HTML CSS JavaScript</div>
-                </div>
-                <div class="project-info">
-                    <h3>Looto E-commerce</h3>
-                    <p>Full-stack e-commerce platform</p>
-                    <div class="project-buttons">
-                        <a href="https://github.com/HarshitaMav/ecommerce-store-react" target="_blank"><button class="btn-primary">Code</button></a>
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="experience" class="experience">
+        <h2><span class="hash">#</span>work-experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Aug 2022 - Apr 2024</div>
+                    <h3>Machine Learning Engineer</h3>
+                    <h4>Metamorphosys Technologies, Mumbai, India</h4>
+                    <ul>
+                        <li>Established and led the Data Science team, developing an AutoML Framework that cut model development time by <strong>80%</strong></li>
+                        <li>Partnered with business stakeholders to build and deploy fraud detection models (<strong>85% accuracy</strong>), reducing client losses</li>
+                        <li>Delivered a 95%-accurate OCR system, boosting customer acquisition by <strong>40%</strong> and increasing revenue by 30%</li>
+                        <li>Integrated generative AI and LLMs into workflows, cutting project time by 7 days and boosting efficiency by <strong>25%</strong></li>
+                    </ul>
+                    <div class="tech-used">
+                        <span>Python</span>
+                        <span>TensorFlow</span>
+                        <span>AWS</span>
+                        <span>Docker</span>
+                        <span>Kubernetes</span>
                     </div>
                 </div>
             </div>
-            
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="images/face-recognition.png" alt="Face Recognition AI" style="width:65%; height:200px; object-fit:cover; border-radius:8px;">
-                    <div class="tech-stack">Python Keras TensorFlow OpenCV</div>
-                </div>
-                <div class="project-info">
-                    <h3>Face Recognition AI</h3>
-                    <p>Adversarial masking techniques</p>
-                    <div class="project-buttons">
-                        <a href="https://ieeexplore.ieee.org/abstract/document/9825044" target="_blank"><button class="btn-primary">Code</button></a>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2022 - 2024</div>
+                    <h3>Research Assistant</h3>
+                    <h4>K.J. Somaiya Institute of Engineering, Mumbai, India</h4>
+                    <ul>
+                        <li>Developed ML-based Genetic Algorithm for optimization and rule generation on 5 types of datasets</li>
+                        <li>Achieved <strong>90% confidence</strong> in rule-based predictions by optimizing Genetic Algorithm parameters</li>
+                        <li>Reduced mentor's workload by <strong>30%</strong>, accelerating Ph.D. research analysis</li>
+                        <li>Published research findings with actionable insights through data visualization</li>
+                    </ul>
+                    <div class="tech-used">
+                        <span>Python</span>
+                        <span>Scikit-Learn</span>
+                        <span>Matplotlib</span>
+                        <span>Genetic Algorithms</span>
                     </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Jun 2021 - Aug 2021</div>
+                    <h3>Software Developer Intern</h3>
+                    <h4>Digel Systems, Mumbai, India</h4>
+                    <ul>
+                        <li>Delivered a full-stack Pizza Parlour Management application with ordering, inventory tracking, and billing</li>
+                        <li>Implemented secure authentication and automated billing, reducing manual effort by <strong>50%</strong></li>
+                        <li>Contributed to <strong>15%</strong> improvement in service efficiency through scalable automation solution</li>
+                        <li>Enhanced company's product portfolio with highly scalable automation solution</li>
+                    </ul>
+                    <div class="tech-used">
+                        <span>JavaScript</span>
+                        <span>Node.js</span>
+                        <span>MySQL</span>
+                        <span>HTML/CSS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="research">
+        <h2><span class="hash">#</span>research</h2>
+        <div class="research-grid">
+            <div class="research-card">
+                <div class="research-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>ML-based Genetic Algorithm Optimization</h3>
+                <p>Developed novel optimization techniques using Genetic Algorithms for rule generation across multiple dataset types, achieving 90% confidence in predictions.</p>
+                <div class="research-details">
+                    <div class="research-metrics">
+                        <span class="metric">5 Dataset Types</span>
+                        <span class="metric">90% Confidence</span>
+                        <span class="metric">4 Parameters</span>
+                    </div>
+                    <div class="research-impact">
+                        <h4>Impact:</h4>
+                        <p>Reduced mentor's research workload by 30%, providing streamlined approach to rule-based machine learning optimization.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="research-card">
+                <div class="research-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3>Face Recognition & Adversarial Masking Techniques</h3>
+                <p>Enhanced face recognition models by developing adversarial masking techniques, published in IEEE International Conference for Emerging Technology (INCET) 2022.</p>
+                <div class="research-details">
+                    <div class="research-metrics">
+                        <span class="metric">IEEE Published</span>
+                        <span class="metric">99% Dependency Reduction</span>
+                        <span class="metric">2022 INCET</span>
+                    </div>
+                    <div class="research-impact">
+                        <h4>Technologies:</h4>
+                        <p>Python, Jupyter, FaceNet, MTCNN, Keras for computer vision and adversarial attack resistance.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="research-card">
+                <div class="research-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>AutoML Framework Development</h3>
+                <p>Research and development of enterprise-grade AutoML framework that automates machine learning pipeline development, reducing time-to-deployment by 80%.</p>
+                <div class="research-details">
+                    <div class="research-metrics">
+                        <span class="metric">80% Time Reduction</span>
+                        <span class="metric">Enterprise Grade</span>
+                        <span class="metric">Production Ready</span>
+                    </div>
+                    <div class="research-impact">
+                        <h4>Innovation:</h4>
+                        <p>Pioneered automated model selection, hyperparameter tuning, and deployment strategies for production environments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blogs Section -->
+    <section id="blogs" class="blogs">
+        <h2><span class="hash">#</span>blogs</h2>
+        <div class="blogs-container">
+            <div class="blog-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ai-ml">AI/ML</button>
+                <button class="filter-btn" data-filter="web-dev">Web Dev</button>
+                <button class="filter-btn" data-filter="research">Research</button>
+            </div>
+            <div class="blogs-grid" id="blogsGrid">
+                <!-- Blogs will be dynamically loaded here -->
+                <div class="blog-loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading latest articles from Medium...</p>
                 </div>
             </div>
         </div>
@@ -98,50 +368,67 @@
         <h2><span class="hash">#</span>skills</h2>
         <div class="skills-container">
             <div class="skills-visual">
-                <img src="images/Group 36.png">
+                <div class="skill-orbit">
+                    <div class="orbit-center">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="orbit-ring ring-1">
+                        <div class="orbit-item"><i class="fab fa-python"></i></div>
+                        <div class="orbit-item"><i class="fab fa-js-square"></i></div>
+                        <div class="orbit-item"><i class="fab fa-react"></i></div>
+                    </div>
+                    <div class="orbit-ring ring-2">
+                        <div class="orbit-item"><i class="fas fa-database"></i></div>
+                        <div class="orbit-item"><i class="fab fa-docker"></i></div>
+                        <div class="orbit-item"><i class="fab fa-aws"></i></div>
+                        <div class="orbit-item"><i class="fas fa-chart-line"></i></div>
+                    </div>
+                </div>
             </div>
             <div class="skills-content">
                 <div class="skill-category">
-                    <h3>Languages</h3>
+                    <h3>Programming Languages</h3>
                     <div class="skill-tags">
-                        <span>Python</span>
-                        <span>JavaScript</span>
-                        <span>Java</span>
-                        <span>C++</span>
-                        <span>SQL</span>
+                        <span data-level="95">Python</span>
+                        <span data-level="90">JavaScript</span>
+                        <span data-level="85">Java</span>
+                        <span data-level="80">C++</span>
+                        <span data-level="88">SQL</span>
                     </div>
                 </div>
                 
                 <div class="skill-category">
-                    <h3>Frameworks</h3>
+                    <h3>ML & AI Frameworks</h3>
                     <div class="skill-tags">
-                        <span>React.js</span>
-                        <span>Next.js</span>
-                        <span>Django</span>
-                        <span>Flask</span>
-                        <span>FastAPI</span>
+                        <span data-level="95">TensorFlow</span>
+                        <span data-level="90">Keras</span>
+                        <span data-level="85">PyTorch</span>
+                        <span data-level="92">Scikit-Learn</span>
+                        <span data-level="88">OpenCV</span>
+                        <span data-level="85">LangChain</span>
                     </div>
                 </div>
                 
                 <div class="skill-category">
-                    <h3>AI/ML Tools</h3>
+                    <h3>Full-Stack & Backend</h3>
                     <div class="skill-tags">
-                        <span>TensorFlow</span>
-                        <span>Keras</span>
-                        <span>PyTorch</span>
-                        <span>OpenCV</span>
-                        <span>LangChain</span>
+                        <span data-level="92">React.js</span>
+                        <span data-level="88">Next.js</span>
+                        <span data-level="90">Django</span>
+                        <span data-level="85">Flask</span>
+                        <span data-level="88">FastAPI</span>
+                        <span data-level="85">Node.js</span>
                     </div>
                 </div>
                 
                 <div class="skill-category">
-                    <h3>DevOps</h3>
+                    <h3>DevOps & Cloud</h3>
                     <div class="skill-tags">
-                        <span>Docker</span>
-                        <span>Kubernetes</span>
-                        <span>Git</span>
-                        <span>CI/CD</span>
-                        <span>AWS</span>
+                        <span data-level="88">Docker</span>
+                        <span data-level="82">Kubernetes</span>
+                        <span data-level="90">Git</span>
+                        <span data-level="85">AWS</span>
+                        <span data-level="80">CI/CD</span>
                     </div>
                 </div>
             </div>
@@ -154,12 +441,32 @@
         <div class="about-content">
             <div class="about-text">
                 <p>Hello, I'm Harsita!</p>
-                <p>I'm a product-driven software engineer based in Syracuse, currently pursuing my Master's in Computer Science. I transform ideas from concept into production-ready AI solutions, with experience spanning fraud detection, OCR systems, and automated support platforms.</p>
-                <p>Leading cross-functional teams to deploy machine learning models has been my passion for over 2 years. I have been instrumental in helping various clients establish their AI presence online. I always strive to learn about the latest technologies and frameworks.</p>
-                <a href="https://drive.google.com/file/d/1sBLL2sMRIy5i9h5XnVcKymzSkLqPMs1z/view?usp=sharing" target="_blank"><button class="read-more">Read more ~~></button></a>
+                <p>I'm a product-driven software engineer currently pursuing my Master's in Computer Science at Syracuse University. With over 2 years of experience leading cross-functional teams, I specialize in transforming ideas from concept into production-ready AI solutions.</p>
+                <p>My expertise spans fraud detection systems, OCR technologies, and automated support platforms. I've successfully deployed machine learning models that process millions of transactions daily and have been instrumental in helping various clients establish their AI presence online.</p>
+                <p>I'm passionate about business transformation through technology and always strive to learn about the latest developments in AI/ML and full-stack technologies. My goal is to bridge the gap between cutting-edge research and practical business applications.</p>
+                <div class="about-achievements">
+                    <div class="achievement">
+                        <h4>85%</h4>
+                        <p>Fraud Detection Accuracy</p>
+                    </div>
+                    <div class="achievement">
+                        <h4>80%</h4>
+                        <p>Reduced Development Time</p>
+                    </div>
+                    <div class="achievement">
+                        <h4>40%</h4>
+                        <p>Increased Customer Acquisition</p>
+                    </div>
+                </div>
+                <button class="read-more">Read more ~~></button>
             </div>
             <div class="about-image">
-                <img src="images/about.png" alt="Harsita Mav" class="about-photo" style="width:250px; height:300px; object-fit:cover; border-radius:10px; border:2px solid transparent;">
+                <img src="images/profile-picture.jpg" alt="Harsita Mav" class="about-profile-image">
+                <div class="about-decorations">
+                    <div class="decoration-dot"></div>
+                    <div class="decoration-square"></div>
+                    <div class="decoration-circle"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -169,35 +476,77 @@
         <h2><span class="hash">#</span>contacts</h2>
         <div class="contacts-content">
             <div class="contact-text">
-                <p>I'm interested in freelance and research opportunities in such developments. However, if you have other requests or questions, don't hesitate to contact me.</p>
+                <p>I'm actively pursuing freelance opportunities and research collaborations in AI and software development. Whether you're looking to discuss a project, explore partnerships, or have any questions, I'd be delighted to connect.</p>
             </div>
             <div class="contact-info">
                 <h3>Message me here</h3>
                 <div class="contact-links">
-                    <a href="mailto:hmav@syr.edu" target="_blank">hmav01@syr.edu</a>
-                    <a href="https://www.linkedin.com/in/harshita-mav-b5800917b/" target="_blank">LinkedIn</a>
+                    <a href="mailto:hmav@syr.edu">
+                        <i class="fas fa-envelope"></i>
+                        hmav01@syr.edu
+                    </a>
+                    <a href="https://www.linkedin.com/in/harshita-mav-b5800917b/" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/harshitamav" target="_blank">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-header">
+            <h4><i class="fas fa-robot"></i> AI Assistant</h4>
+            <button class="chatbot-toggle" id="chatbotToggle">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="message bot-message">
+                <p>Hi! I'm Harsita's AI assistant. Ask me anything about her experience, projects, or skills!</p>
+            </div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbotInput" placeholder="Ask me anything about Harsita...">
+            <button id="chatbotSend"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- Chatbot Toggle Button -->
+    <button class="chatbot-fab" id="chatbotFab">
+        <i class="fas fa-robot"></i>
+    </button>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-left">
                 <div class="footer-logo">Harsita</div>
-                <p>ML Engineer and Full-stack Developer</p>
+                <p>AI/ML Engineer and Full-stack Developer</p>
+                <div class="footer-social">
+                    <a href="https://github.com/harshitamav"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/harshita-mav-b5800917b/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://harsita-mav.medium.com/"><i class="fab fa-medium"></i></a>
+                    <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
+                </div>
             </div>
             <div class="footer-right">
                 <h4>Media</h4>
                 <div class="social-links">
                     <a href="https://github.com/harshitamav" target="_blank">GitHub</a>
                     <a href="https://www.linkedin.com/in/harshita-mav-b5800917b/" target="_blank">LinkedIn</a>
+                    <a href="https://harsita-mav.medium.com/" target="_blank">Medium</a>
+                    <a href="https://leetcode.com/u/HarsitaMav24/">LeetCode</a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© Copyright 2025. Made by Harsita</p>
+            <p>© Copyright 2025. Made with <i class="fas fa-heart"></i> by Harsita</p>
         </div>
     </footer>
 
