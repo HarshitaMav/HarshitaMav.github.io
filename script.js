@@ -265,7 +265,7 @@ function initializeChatbot() {
 function downloadResume() {
     // Create a link element and trigger download
     const link = document.createElement('a');
-    link.href = 'assets/Harsita-Mav.pdf'; // Make sure to add the resume file
+    link.href = 'https://drive.google.com/file/d/1sBLL2sMRIy5i9h5XnVcKymzSkLqPMs1z/view?usp=drive_link'; // Make sure to add the resume file
     link.download = 'Harsita-Mav-Resume.pdf';
     link.click();
     
